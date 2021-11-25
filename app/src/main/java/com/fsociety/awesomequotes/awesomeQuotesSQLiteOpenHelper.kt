@@ -8,6 +8,11 @@ class awesomeQuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context
 
     override fun onCreate(db: SQLiteDatabase?) {
         //create the quote table (quotes and categories)
+        db!!.execSQL("CREATE TABLE quotes_categories(" +
+                "id INTEGER PRIMARY KEY" +
+                "picture_resource_id TEXT" +
+                "name TEXT" +
+                ")");
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
