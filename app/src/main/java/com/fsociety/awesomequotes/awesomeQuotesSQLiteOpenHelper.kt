@@ -10,15 +10,15 @@ class awesomeQuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context
     override fun onCreate(db: SQLiteDatabase?) {
         //create the quote table (quotes and categories)
         db!!.execSQL("CREATE TABLE quotes_categories(" +
-                "_id INTEGER PRIMARY KEY" +
-                "picture_resource_id TEXT" +
+                "_id INTEGER PRIMARY KEY," +
+                "picture_resource_id TEXT," +
                 "name TEXT" +
                 ")");
 
         insertQuotesQuategory(db,1,R.drawable.alone,"Alone")
-        insertQuotesQuategory(db,2,R.drawable.alone,"Computer")
-        insertQuotesQuategory(db,3,R.drawable.alone,"Gamer")
-        insertQuotesQuategory(db,4,R.drawable.alone,"Matrix")
+        insertQuotesQuategory(db,2,R.drawable.computer,"Computer")
+        insertQuotesQuategory(db,3,R.drawable.gamer,"Gamer")
+        insertQuotesQuategory(db,4,R.drawable.matrix,"Matrix")
 
     }
     //function to insert quote in the table
