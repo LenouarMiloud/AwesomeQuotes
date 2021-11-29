@@ -1,5 +1,6 @@
 package com.fsociety.awesomequotes
 
+import android.content.Intent
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
@@ -38,7 +39,11 @@ class MainActivity : AppCompatActivity() {
             //add the category to the List
             listOfCategorie.add(Categorie)
 
-            categoryAdapte = categorieAdapter(this,listOfCategorie)
+            categoryAdapte = categorieAdapter(this,listOfCategorie){categorieId->
+                val intent = Intent(this,QuoteDetailActivity::class.java)
+                intent.putExtra("QuoteCategoryId",categorieId)
+                startActivity(intent)
+            }
 
             //the Layout Manager
             //val categorieLayoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
