@@ -13,7 +13,7 @@ import java.util.zip.Inflater
 
 class categorieAdapter(val context:Context,val categories : List<categorie>,val onItemClick :(Int)->Unit) : RecyclerView.Adapter<categorieAdapter.myVieHolder>() {
 
-    inner class myVieHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+    inner class myVieHolder(itemView: View,val onItemClick :(Int)->Unit) : RecyclerView.ViewHolder(itemView){
 
         val categorieImage = itemView!!.findViewById<ImageView>(R.id.imageViewCategorieImage)
         val categorieName = itemView!!.findViewById<TextView>(R.id.textViewCategorieName)
@@ -30,7 +30,7 @@ class categorieAdapter(val context:Context,val categories : List<categorie>,val 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myVieHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.categorie_item,parent,false)
-        val viewHolder = myVieHolder(view)
+        val viewHolder = myVieHolder(view,onItemClick)
 
         return viewHolder
 
