@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_quote_detail.*
+import kotlin.text.Typography.quote
 
 class QuoteDetailActivity : AppCompatActivity() {
 
@@ -38,7 +39,12 @@ class QuoteDetailActivity : AppCompatActivity() {
 
         //Create an adapter object
         quoteAdapter = quoteAdapter(this,listOfQuote){
-
+            //the share intent here
+            val shareIntent = Intent()
+            shareIntent.action = Intent.ACTION_SEND
+            shareIntent.putExtra(Intent.EXTRA_TEXT,quote)
+            shareIntent.type = "text/plain"
+            startActivity(shareIntent)
         }
 
         //use a layout manager

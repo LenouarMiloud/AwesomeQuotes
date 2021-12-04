@@ -20,7 +20,7 @@ class quoteAdapter(val context : Context,val quotes:List<String>,val onItemLongC
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return quotes.count()
     }
 
     inner class MyViewHolder(itemView: View,onItemLongClick:(String) -> Unit): RecyclerView.ViewHolder(itemView){

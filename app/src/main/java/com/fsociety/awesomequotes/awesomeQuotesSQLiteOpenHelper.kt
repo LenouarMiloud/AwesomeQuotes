@@ -15,10 +15,10 @@ class awesomeQuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context
                 "name TEXT" +
                 ")");
 
-        insertQuotesQuategory(db,1,R.drawable.computer1,"Alone")
-        insertQuotesQuategory(db,2,R.drawable.love1,"Computer")
-        insertQuotesQuategory(db,3,R.drawable.computer2,"Gamer")
-        insertQuotesQuategory(db,4,R.drawable.love2,"Matrix")
+        insertQuotesQuategory(db,1,R.drawable.alone,"Alone")
+        insertQuotesQuategory(db,2,R.drawable.computer,"Computer")
+        insertQuotesQuategory(db,3,R.drawable.gamer,"Gamer")
+        insertQuotesQuategory(db,4,R.drawable.love,"Love")
 
         //Quote Table
         db!!.execSQL("CREATE TABLE quotes(" +
@@ -26,8 +26,8 @@ class awesomeQuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context
                 "categoryId INTEGER" +
                 ")");
         insertQuote(db,"Love is never Lost ....",1)
-        insertQuote(db,"Love is hard ....",2)
-        insertQuote(db,"Love is awesome  ....",3)
+        insertQuote(db,"Love is hard ....",1)
+        insertQuote(db,"Love is awesome  ....",1)
 
         }
 
