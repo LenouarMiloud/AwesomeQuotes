@@ -48,8 +48,8 @@ class MainActivity : AppCompatActivity() {
             //the Layout Manager
             //val categorieLayoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
             val categorieGridLayoutManager = GridLayoutManager(this,2)
-            recyclerViewCotesCategorie.adapter = categoryAdapte
-            recyclerViewCotesCategorie.layoutManager = categorieGridLayoutManager
+            recyclerViewQuotesCategorie.adapter = categoryAdapte
+            recyclerViewQuotesCategorie.layoutManager = categorieGridLayoutManager
 
 
 

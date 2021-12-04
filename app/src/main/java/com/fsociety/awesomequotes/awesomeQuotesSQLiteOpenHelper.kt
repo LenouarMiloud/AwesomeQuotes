@@ -5,7 +5,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class awesomeQuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context,"AwesomeQuotes",null,1) {
+class awesomeQuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context,null,null,1) {
 
     override fun onCreate(db: SQLiteDatabase?) {
         //create the quote_category table (quotes and categories)
@@ -15,10 +15,10 @@ class awesomeQuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context
                 "name TEXT" +
                 ")");
 
-        insertQuotesQuategory(db,1,R.drawable.alone,"Alone")
-        insertQuotesQuategory(db,2,R.drawable.computer,"Computer")
-        insertQuotesQuategory(db,3,R.drawable.gamer,"Gamer")
-        insertQuotesQuategory(db,4,R.drawable.matrix,"Matrix")
+        insertQuotesQuategory(db,1,R.drawable.computer1,"Alone")
+        insertQuotesQuategory(db,2,R.drawable.love1,"Computer")
+        insertQuotesQuategory(db,3,R.drawable.computer2,"Gamer")
+        insertQuotesQuategory(db,4,R.drawable.love2,"Matrix")
 
         //Quote Table
         db!!.execSQL("CREATE TABLE quotes(" +
@@ -52,7 +52,7 @@ class awesomeQuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context
         val contentValues = ContentValues()
 
         contentValues.put("quote", quote)
-        contentValues.put("category_id", categoryId)
+        contentValues.put("categoryId", categoryId)
 
         db!!.insert("quotes", null, contentValues)
     }
