@@ -6,12 +6,16 @@ import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_quote_detail.*
 
 class QuoteDetailActivity : AppCompatActivity() {
 
     var quoteCategoryId = 0
     var db: SQLiteDatabase? = null
     var cursor: Cursor? = null
+    var quoteAdapter: quoteAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,13 +28,31 @@ class QuoteDetailActivity : AppCompatActivity() {
         //read the data from database
         val myQuoteDatabaseHelper = awesomeQuotesSQLiteOpenHelper(this)
         db = myQuoteDatabaseHelper.readableDatabase
-        cursor = db!!.query("quotes", arrayOf())
+        cursor = db!!.query("quotes", arrayOf("quote"),"categoryId=?", arrayOf(quoteCategoryId.toString()),null,null,null)
 
+        var listOfQuote = mutableListOf<String>()
+        while (cursor!!.moveToNext()){
+            var quote = cursor!!.getString(0)
+            listOfQuote.add(quote)
+        }
 
         //Create an adapter object
-        //set the adapter
-        //use a layout manager
+        quoteAdapter = quoteAdapter(this,listOfQuote){
 
+        }
+
+        //use a layout manager
+        val layoutManager = LinearLayoutManager(this)
+        recyclerViewQuotes.layoutManager = layoutManager
+        recyclerViewQuotes.adapter = quoteAdapter
 
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        db!!.close()
+        cursor!!.close()
+    }
+
 }

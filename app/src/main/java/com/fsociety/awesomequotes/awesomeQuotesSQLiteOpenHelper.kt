@@ -26,6 +26,8 @@ class awesomeQuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context
                 "categoryId INTEGER" +
                 ")");
         insertQuote(db,"Love is never Lost ....",1)
+        insertQuote(db,"Love is hard ....",2)
+        insertQuote(db,"Love is awesome  ....",3)
 
         }
 
