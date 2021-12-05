@@ -17,6 +17,7 @@ class quoteAdapter(val context : Context,val quotes:List<String>,val onItemLongC
 
     override fun onBindViewHolder(viewHolder: MyViewHolder, quoteIndex: Int) {
         viewHolder.bindQuote(quotes[quoteIndex])
+        animationHelper.animate(viewHolder.itemView)
     }
 
     override fun getItemCount(): Int {

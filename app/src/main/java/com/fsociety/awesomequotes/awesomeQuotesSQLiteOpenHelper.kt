@@ -28,6 +28,18 @@ class awesomeQuotesSQLiteOpenHelper(context: Context) : SQLiteOpenHelper(context
         insertQuote(db,"Love is never Lost ....",1)
         insertQuote(db,"Love is hard ....",1)
         insertQuote(db,"Love is awesome  ....",1)
+        insertQuote(db,"Love is never Lost ....",1)
+        insertQuote(db,"Love is hard ....",1)
+        insertQuote(db,"Love is awesome  ....",1)
+        insertQuote(db,"Love is never Lost ....",1)
+        insertQuote(db,"Love is hard ....",1)
+        insertQuote(db,"Love is awesome  ....",1)
+        insertQuote(db,"Love is never Lost ....",1)
+        insertQuote(db,"Love is hard ....",1)
+        insertQuote(db,"Love is awesome  ....",1)
+        insertQuote(db,"Love is never Lost ....",1)
+        insertQuote(db,"Love is hard ....",1)
+        insertQuote(db,"Love is awesome  ....",1)
 
         }
 
